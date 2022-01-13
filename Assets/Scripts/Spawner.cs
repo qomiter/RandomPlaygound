@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CubeSpawner", 0f, 0.05f);
+        InvokeRepeating("CubeSpawner", 0f, 0.001f);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
 
     void CubeSpawner()
     {
-        Instantiate(cube, new Vector3(Random.Range(-18, 19), Random.Range(-11, 12), 0), Quaternion.identity);
+        Instantiate(cube, new Vector3(Random.Range(-17, 18), Random.Range(-9, 10), 0), Quaternion.identity);
         cube.GetComponent<Renderer>().material = mats[Random.Range(0, 3)];
     }
 }
