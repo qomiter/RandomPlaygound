@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject cube; 
+    [SerializeField] Material[] mats;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,6 @@ public class Spawner : MonoBehaviour
     void CubeSpawner()
     {
         Instantiate(cube, new Vector3(Random.Range(-18, 19), Random.Range(-11, 12), 0), Quaternion.identity);
+        cube.GetComponent<Renderer>().material = mats[Random.Range(0, 3)];
     }
 }
